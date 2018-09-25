@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		4EF276D813D79EC2552B62C7 /* Pods_BitskiUnitySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F2F7BE2B411FE3A90D7A6F3 /* Pods_BitskiUnitySDK.framework */; };
 		D31A617120E1BB6F00335A41 /* BitskiUnitySDK.h in Headers */ = {isa = PBXBuildFile; fileRef = D31A616F20E1BB6F00335A41 /* BitskiUnitySDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D31A617520E1BB7C00335A41 /* BitskiUnitySDK.mm in Sources */ = {isa = PBXBuildFile; fileRef = D31A616220E1BA7F00335A41 /* BitskiUnitySDK.mm */; };
 		D31A617B20E1BCD800335A41 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D34347E220E18FD3007C1525 /* UIKit.framework */; };
@@ -49,6 +50,7 @@
 			files = (
 				D31A617D20E1BDE000335A41 /* AppAuth.framework in Frameworks */,
 				D31A617B20E1BCD800335A41 /* UIKit.framework in Frameworks */,
+				4EF276D813D79EC2552B62C7 /* Pods_BitskiUnitySDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +125,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D31A617220E1BB6F00335A41 /* Build configuration list for PBXNativeTarget "BitskiUnitySDK" */;
 			buildPhases = (
+				50C57898566AAA35134CEF88 /* [CP] Check Pods Manifest.lock */,
 				D31A616820E1BB6F00335A41 /* Sources */,
 				D31A616920E1BB6F00335A41 /* Frameworks */,
 				D31A616A20E1BB6F00335A41 /* Headers */,
@@ -183,6 +186,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		50C57898566AAA35134CEF88 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BitskiUnitySDK-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D31A617A20E1BBAE00335A41 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

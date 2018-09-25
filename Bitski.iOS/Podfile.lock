@@ -1,5 +1,5 @@
 PODS:
-  - AppAuth (0.92.0)
+  - AppAuth (0.94.0)
 
 DEPENDENCIES:
   - AppAuth
@@ -9,7 +9,7 @@ SPEC REPOS:
     - AppAuth
 
 SPEC CHECKSUMS:
-  AppAuth: 3f4f1d6d85ad631d0bbf15ffcdc10c447face97a
+  AppAuth: 0f099c2286a1a9754e5bd27211c43d307dc4f778
 
 PODFILE CHECKSUM: b42c3274b15489a0a105a2a653b20d052d4d6e81
 
