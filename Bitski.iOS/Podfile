@@ -1,7 +1,0 @@
-platform :ios, '11.0'
-
-target 'BitskiUnitySDK' do
-    use_frameworks!
-
-    pod 'AppAuth'
-end
