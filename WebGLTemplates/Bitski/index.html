@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | %UNITY_WEB_NAME%</title>
+    <script src="%UNITY_WEBGL_LOADER_URL%"></script>
+    <script src="http://localhost:8000/bitski.js"></script>
+    <script>
+        if (window.location.search.includes("id_client") || window.location.search.includes("error")) {
+            let bitski = new window.bitski.Bitski("35a7e890-2f64-4332-b5bc-ee556bde5cf1");
+            bitski.signInCallback();
+        } else {
+            var gameInstance = UnityLoader.instantiate("gameContainer", "%UNITY_WEBGL_BUILD_URL%");
+        }
+    </script>
+  </head>
+  
+  <body>
+    <div id="gameContainer" style="width: %UNITY_WIDTH%px; height: %UNITY_HEIGHT%px; margin: auto"></div>
+  </body>
+  
+</html>
