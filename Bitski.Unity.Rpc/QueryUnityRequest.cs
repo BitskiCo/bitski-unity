@@ -4,6 +4,7 @@ using Nethereum.ABI.FunctionEncoding.Attributes;
 using Nethereum.Contracts;
 using Nethereum.Contracts.CQS;
 using Nethereum.Contracts.Extensions;
+using Bitski.Auth;
 
 namespace Bitski.Unity.Rpc
 {
@@ -14,10 +15,10 @@ namespace Bitski.Unity.Rpc
         private readonly EthCallUnityRequest _ethCallUnityRequest;
         public string DefaultAccount { get; set; }
 
-        public QueryUnityRequest(string defaultAccount, string networkName = "mainnet")
+        public QueryUnityRequest(string defaultAccount, AuthProvider authProvider, string networkName = "mainnet")
         {
             DefaultAccount = defaultAccount;
-            _ethCallUnityRequest = new EthCallUnityRequest(networkName);
+            _ethCallUnityRequest = new EthCallUnityRequest(authProvider, networkName);
         }
 
         public IEnumerator Query(TFunctionMessage functionMessage, string contractAddress, BlockParameter blockParameter = null)

@@ -3,6 +3,8 @@
     using System;
     using System.Runtime.InteropServices;
     using UnityEngine;
+    using Newtonsoft.Json;
+    using Bitski.Auth;
 
     [Serializable]
     class WebGLProfileResponse
@@ -24,7 +26,7 @@
         public string token_type;
     }
 
-    class WebGLAuthProvider : MonoBehaviour, AuthProvider
+    public class WebGLAuthProvider : MonoBehaviour, AuthProvider
     {
         [DllImport("__Internal")]
         private static extern void BitskiWebGLInit(string clientId);

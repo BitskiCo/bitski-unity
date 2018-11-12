@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Bitski.Unity.WebGL\Bitski.Unity.WebGL.csproj" />
+    <ProjectReference Include="..\Bitski.Auth\Bitski.Unity.Auth.csproj" />
+    <ProjectReference Include="..\Bitski.Unity.Editor\Bitski.Unity.Editor.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="UnityEngine">
+      <HintPath>..\lib\UnityEngine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -1,15 +1,13 @@
-﻿
-using Newtonsoft.Json;
-using System.Collections;
-
-namespace Bitski.Unity.Rpc
+﻿namespace Bitski.Unity.Rpc
 {
-
+    using Newtonsoft.Json;
+    using System.Collections;
+    using Bitski.Auth;
     public class Web3ClientVersionUnityRequest : UnityRpcClient<System.String>
     {
         private readonly Nethereum.RPC.Web3.Web3ClientVersion _web3ClientVersion;
 
-        public Web3ClientVersionUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public Web3ClientVersionUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _web3ClientVersion = new Nethereum.RPC.Web3.Web3ClientVersion(null);
         }
@@ -26,7 +24,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Web3.Web3Sha3 _web3Sha3;
 
-        public Web3Sha3UnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public Web3Sha3UnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _web3Sha3 = new Nethereum.RPC.Web3.Web3Sha3(null);
         }
@@ -43,7 +41,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Shh.ShhNewIdentity _shhNewIdentity;
 
-        public ShhNewIdentityUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public ShhNewIdentityUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _shhNewIdentity = new Nethereum.RPC.Shh.ShhNewIdentity(null);
         }
@@ -60,7 +58,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Shh.ShhVersion _shhVersion;
 
-        public ShhVersionUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public ShhVersionUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _shhVersion = new Nethereum.RPC.Shh.ShhVersion(null);
         }
@@ -77,7 +75,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Personal.PersonalListAccounts _personalListAccounts;
 
-        public PersonalListAccountsUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public PersonalListAccountsUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _personalListAccounts = new Nethereum.RPC.Personal.PersonalListAccounts(null);
         }
@@ -94,7 +92,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Personal.PersonalLockAccount _personalLockAccount;
 
-        public PersonalLockAccountUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public PersonalLockAccountUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _personalLockAccount = new Nethereum.RPC.Personal.PersonalLockAccount(null);
         }
@@ -111,7 +109,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Personal.PersonalNewAccount _personalNewAccount;
 
-        public PersonalNewAccountUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public PersonalNewAccountUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _personalNewAccount = new Nethereum.RPC.Personal.PersonalNewAccount(null);
         }
@@ -128,7 +126,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Personal.PersonalSignAndSendTransaction _personalSignAndSendTransaction;
 
-        public PersonalSignAndSendTransactionUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public PersonalSignAndSendTransactionUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _personalSignAndSendTransaction = new Nethereum.RPC.Personal.PersonalSignAndSendTransaction(null);
         }
@@ -145,7 +143,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Personal.PersonalUnlockAccount _personalUnlockAccount;
 
-        public PersonalUnlockAccountUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public PersonalUnlockAccountUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _personalUnlockAccount = new Nethereum.RPC.Personal.PersonalUnlockAccount(null);
         }
@@ -162,7 +160,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Net.NetListening _netListening;
 
-        public NetListeningUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public NetListeningUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _netListening = new Nethereum.RPC.Net.NetListening(null);
         }
@@ -179,7 +177,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Net.NetPeerCount _netPeerCount;
 
-        public NetPeerCountUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public NetPeerCountUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _netPeerCount = new Nethereum.RPC.Net.NetPeerCount(null);
         }
@@ -196,7 +194,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Net.NetVersion _netVersion;
 
-        public NetVersionUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public NetVersionUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _netVersion = new Nethereum.RPC.Net.NetVersion(null);
         }
@@ -213,7 +211,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.EthAccounts _ethAccounts;
 
-        public EthAccountsUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthAccountsUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethAccounts = new Nethereum.RPC.Eth.EthAccounts(null);
         }
@@ -230,7 +228,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.EthCoinBase _ethCoinBase;
 
-        public EthCoinBaseUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthCoinBaseUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethCoinBase = new Nethereum.RPC.Eth.EthCoinBase(null);
         }
@@ -247,7 +245,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.EthGasPrice _ethGasPrice;
 
-        public EthGasPriceUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthGasPriceUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethGasPrice = new Nethereum.RPC.Eth.EthGasPrice(null);
         }
@@ -264,7 +262,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.EthGetBalance _ethGetBalance;
 
-        public EthGetBalanceUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthGetBalanceUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethGetBalance = new Nethereum.RPC.Eth.EthGetBalance(null);
         }
@@ -281,7 +279,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.EthGetCode _ethGetCode;
 
-        public EthGetCodeUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthGetCodeUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethGetCode = new Nethereum.RPC.Eth.EthGetCode(null);
         }
@@ -298,7 +296,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.EthGetStorageAt _ethGetStorageAt;
 
-        public EthGetStorageAtUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthGetStorageAtUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethGetStorageAt = new Nethereum.RPC.Eth.EthGetStorageAt(null);
         }
@@ -315,7 +313,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.EthProtocolVersion _ethProtocolVersion;
 
-        public EthProtocolVersionUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthProtocolVersionUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethProtocolVersion = new Nethereum.RPC.Eth.EthProtocolVersion(null);
         }
@@ -332,7 +330,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.EthSign _ethSign;
 
-        public EthSignUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthSignUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethSign = new Nethereum.RPC.Eth.EthSign(null);
         }
@@ -349,7 +347,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.EthSyncing _ethSyncing;
 
-        public EthSyncingUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthSyncingUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethSyncing = new Nethereum.RPC.Eth.EthSyncing(null);
         }
@@ -366,7 +364,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Uncles.EthGetUncleByBlockHashAndIndex _ethGetUncleByBlockHashAndIndex;
 
-        public EthGetUncleByBlockHashAndIndexUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthGetUncleByBlockHashAndIndexUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethGetUncleByBlockHashAndIndex = new Nethereum.RPC.Eth.Uncles.EthGetUncleByBlockHashAndIndex(null);
         }
@@ -383,7 +381,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Uncles.EthGetUncleByBlockNumberAndIndex _ethGetUncleByBlockNumberAndIndex;
 
-        public EthGetUncleByBlockNumberAndIndexUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthGetUncleByBlockNumberAndIndexUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethGetUncleByBlockNumberAndIndex = new Nethereum.RPC.Eth.Uncles.EthGetUncleByBlockNumberAndIndex(null);
         }
@@ -400,7 +398,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Uncles.EthGetUncleCountByBlockHash _ethGetUncleCountByBlockHash;
 
-        public EthGetUncleCountByBlockHashUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthGetUncleCountByBlockHashUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethGetUncleCountByBlockHash = new Nethereum.RPC.Eth.Uncles.EthGetUncleCountByBlockHash(null);
         }
@@ -417,7 +415,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Uncles.EthGetUncleCountByBlockNumber _ethGetUncleCountByBlockNumber;
 
-        public EthGetUncleCountByBlockNumberUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthGetUncleCountByBlockNumberUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethGetUncleCountByBlockNumber = new Nethereum.RPC.Eth.Uncles.EthGetUncleCountByBlockNumber(null);
         }
@@ -434,7 +432,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Transactions.EthCall _ethCall;
 
-        public EthCallUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthCallUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethCall = new Nethereum.RPC.Eth.Transactions.EthCall(null);
         }
@@ -451,7 +449,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Transactions.EthEstimateGas _ethEstimateGas;
 
-        public EthEstimateGasUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthEstimateGasUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethEstimateGas = new Nethereum.RPC.Eth.Transactions.EthEstimateGas(null);
         }
@@ -468,7 +466,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Transactions.EthGetTransactionByBlockHashAndIndex _ethGetTransactionByBlockHashAndIndex;
 
-        public EthGetTransactionByBlockHashAndIndexUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthGetTransactionByBlockHashAndIndexUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethGetTransactionByBlockHashAndIndex = new Nethereum.RPC.Eth.Transactions.EthGetTransactionByBlockHashAndIndex(null);
         }
@@ -485,7 +483,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Transactions.EthGetTransactionByBlockNumberAndIndex _ethGetTransactionByBlockNumberAndIndex;
 
-        public EthGetTransactionByBlockNumberAndIndexUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthGetTransactionByBlockNumberAndIndexUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethGetTransactionByBlockNumberAndIndex = new Nethereum.RPC.Eth.Transactions.EthGetTransactionByBlockNumberAndIndex(null);
         }
@@ -502,7 +500,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Transactions.EthGetTransactionByHash _ethGetTransactionByHash;
 
-        public EthGetTransactionByHashUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthGetTransactionByHashUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethGetTransactionByHash = new Nethereum.RPC.Eth.Transactions.EthGetTransactionByHash(null);
         }
@@ -519,7 +517,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Transactions.EthGetTransactionCount _ethGetTransactionCount;
 
-        public EthGetTransactionCountUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthGetTransactionCountUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethGetTransactionCount = new Nethereum.RPC.Eth.Transactions.EthGetTransactionCount(null);
         }
@@ -536,7 +534,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Transactions.EthGetTransactionReceipt _ethGetTransactionReceipt;
 
-        public EthGetTransactionReceiptUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthGetTransactionReceiptUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethGetTransactionReceipt = new Nethereum.RPC.Eth.Transactions.EthGetTransactionReceipt(null);
         }
@@ -553,7 +551,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Transactions.EthSendRawTransaction _ethSendRawTransaction;
 
-        public EthSendRawTransactionUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthSendRawTransactionUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethSendRawTransaction = new Nethereum.RPC.Eth.Transactions.EthSendRawTransaction(null);
         }
@@ -570,7 +568,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Transactions.EthSendTransaction _ethSendTransaction;
 
-        public EthSendTransactionUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthSendTransactionUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethSendTransaction = new Nethereum.RPC.Eth.Transactions.EthSendTransaction(null);
         }
@@ -587,7 +585,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Mining.EthGetWork _ethGetWork;
 
-        public EthGetWorkUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthGetWorkUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethGetWork = new Nethereum.RPC.Eth.Mining.EthGetWork(null);
         }
@@ -604,7 +602,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Mining.EthHashrate _ethHashrate;
 
-        public EthHashrateUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthHashrateUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethHashrate = new Nethereum.RPC.Eth.Mining.EthHashrate(null);
         }
@@ -621,7 +619,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Mining.EthMining _ethMining;
 
-        public EthMiningUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthMiningUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethMining = new Nethereum.RPC.Eth.Mining.EthMining(null);
         }
@@ -638,7 +636,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Mining.EthSubmitHashrate _ethSubmitHashrate;
 
-        public EthSubmitHashrateUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthSubmitHashrateUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethSubmitHashrate = new Nethereum.RPC.Eth.Mining.EthSubmitHashrate(null);
         }
@@ -655,7 +653,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Mining.EthSubmitWork _ethSubmitWork;
 
-        public EthSubmitWorkUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthSubmitWorkUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethSubmitWork = new Nethereum.RPC.Eth.Mining.EthSubmitWork(null);
         }
@@ -672,7 +670,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Filters.EthGetFilterChangesForEthNewFilter _ethGetFilterChangesForEthNewFilter;
 
-        public EthGetFilterChangesForEthNewFilterUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthGetFilterChangesForEthNewFilterUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethGetFilterChangesForEthNewFilter = new Nethereum.RPC.Eth.Filters.EthGetFilterChangesForEthNewFilter(null);
         }
@@ -689,7 +687,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Filters.EthGetFilterChangesForBlockOrTransaction _ethGetFilterChangesForBlockOrTransaction;
 
-        public EthGetFilterChangesForBlockOrTransactionUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthGetFilterChangesForBlockOrTransactionUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethGetFilterChangesForBlockOrTransaction = new Nethereum.RPC.Eth.Filters.EthGetFilterChangesForBlockOrTransaction(null);
         }
@@ -706,7 +704,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Filters.EthGetFilterLogsForBlockOrTransaction _ethGetFilterLogsForBlockOrTransaction;
 
-        public EthGetFilterLogsForBlockOrTransactionUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthGetFilterLogsForBlockOrTransactionUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethGetFilterLogsForBlockOrTransaction = new Nethereum.RPC.Eth.Filters.EthGetFilterLogsForBlockOrTransaction(null);
         }
@@ -723,7 +721,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Filters.EthGetFilterLogsForEthNewFilter _ethGetFilterLogsForEthNewFilter;
 
-        public EthGetFilterLogsForEthNewFilterUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthGetFilterLogsForEthNewFilterUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethGetFilterLogsForEthNewFilter = new Nethereum.RPC.Eth.Filters.EthGetFilterLogsForEthNewFilter(null);
         }
@@ -740,7 +738,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Filters.EthGetLogs _ethGetLogs;
 
-        public EthGetLogsUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthGetLogsUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethGetLogs = new Nethereum.RPC.Eth.Filters.EthGetLogs(null);
         }
@@ -757,7 +755,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Filters.EthNewBlockFilter _ethNewBlockFilter;
 
-        public EthNewBlockFilterUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthNewBlockFilterUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethNewBlockFilter = new Nethereum.RPC.Eth.Filters.EthNewBlockFilter(null);
         }
@@ -774,7 +772,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Filters.EthNewFilter _ethNewFilter;
 
-        public EthNewFilterUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthNewFilterUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethNewFilter = new Nethereum.RPC.Eth.Filters.EthNewFilter(null);
         }
@@ -791,7 +789,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Filters.EthNewPendingTransactionFilter _ethNewPendingTransactionFilter;
 
-        public EthNewPendingTransactionFilterUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthNewPendingTransactionFilterUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethNewPendingTransactionFilter = new Nethereum.RPC.Eth.Filters.EthNewPendingTransactionFilter(null);
         }
@@ -808,7 +806,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Filters.EthUninstallFilter _ethUninstallFilter;
 
-        public EthUninstallFilterUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthUninstallFilterUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethUninstallFilter = new Nethereum.RPC.Eth.Filters.EthUninstallFilter(null);
         }
@@ -825,7 +823,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Compilation.EthCompileLLL _ethCompileLLL;
 
-        public EthCompileLLLUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthCompileLLLUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethCompileLLL = new Nethereum.RPC.Eth.Compilation.EthCompileLLL(null);
         }
@@ -842,7 +840,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Compilation.EthCompileSerpent _ethCompileSerpent;
 
-        public EthCompileSerpentUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthCompileSerpentUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethCompileSerpent = new Nethereum.RPC.Eth.Compilation.EthCompileSerpent(null);
         }
@@ -859,7 +857,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Compilation.EthCompileSolidity _ethCompileSolidity;
 
-        public EthCompileSolidityUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthCompileSolidityUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethCompileSolidity = new Nethereum.RPC.Eth.Compilation.EthCompileSolidity(null);
         }
@@ -876,7 +874,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Compilation.EthGetCompilers _ethGetCompilers;
 
-        public EthGetCompilersUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthGetCompilersUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethGetCompilers = new Nethereum.RPC.Eth.Compilation.EthGetCompilers(null);
         }
@@ -893,7 +891,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Blocks.EthBlockNumber _ethBlockNumber;
 
-        public EthBlockNumberUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthBlockNumberUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethBlockNumber = new Nethereum.RPC.Eth.Blocks.EthBlockNumber(null);
         }
@@ -910,7 +908,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Blocks.EthGetBlockWithTransactionsByHash _ethGetBlockWithTransactionsByHash;
 
-        public EthGetBlockWithTransactionsByHashUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthGetBlockWithTransactionsByHashUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethGetBlockWithTransactionsByHash = new Nethereum.RPC.Eth.Blocks.EthGetBlockWithTransactionsByHash(null);
         }
@@ -927,7 +925,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Blocks.EthGetBlockWithTransactionsHashesByHash _ethGetBlockWithTransactionsHashesByHash;
 
-        public EthGetBlockWithTransactionsHashesByHashUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthGetBlockWithTransactionsHashesByHashUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethGetBlockWithTransactionsHashesByHash = new Nethereum.RPC.Eth.Blocks.EthGetBlockWithTransactionsHashesByHash(null);
         }
@@ -944,7 +942,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Blocks.EthGetBlockWithTransactionsByNumber _ethGetBlockWithTransactionsByNumber;
 
-        public EthGetBlockWithTransactionsByNumberUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthGetBlockWithTransactionsByNumberUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethGetBlockWithTransactionsByNumber = new Nethereum.RPC.Eth.Blocks.EthGetBlockWithTransactionsByNumber(null);
         }
@@ -961,7 +959,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Blocks.EthGetBlockTransactionCountByHash _ethGetBlockTransactionCountByHash;
 
-        public EthGetBlockTransactionCountByHashUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthGetBlockTransactionCountByHashUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethGetBlockTransactionCountByHash = new Nethereum.RPC.Eth.Blocks.EthGetBlockTransactionCountByHash(null);
         }
@@ -978,7 +976,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Blocks.EthGetBlockTransactionCountByNumber _ethGetBlockTransactionCountByNumber;
 
-        public EthGetBlockTransactionCountByNumberUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthGetBlockTransactionCountByNumberUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethGetBlockTransactionCountByNumber = new Nethereum.RPC.Eth.Blocks.EthGetBlockTransactionCountByNumber(null);
         }
@@ -995,7 +993,7 @@ namespace Bitski.Unity.Rpc
     {
         private readonly Nethereum.RPC.Eth.Blocks.EthGetBlockWithTransactionsHashesByNumber _ethGetBlockWithTransactionsHashesByNumber;
 
-        public EthGetBlockWithTransactionsHashesByNumberUnityRequest(string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(network, jsonSerializerSettings)
+        public EthGetBlockWithTransactionsHashesByNumberUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
         {
             _ethGetBlockWithTransactionsHashesByNumber = new Nethereum.RPC.Eth.Blocks.EthGetBlockWithTransactionsHashesByNumber(null);
         }

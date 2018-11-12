@@ -8,6 +8,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using RpcError = Nethereum.JsonRpc.Client.RpcError;
 using RpcRequest = Nethereum.JsonRpc.Client.RpcRequest;
+using Bitski.Auth;
 
 namespace Bitski.Unity.Rpc
 {
@@ -15,8 +16,10 @@ namespace Bitski.Unity.Rpc
     public class UnityRpcClient<TResult> : UnityRequest<TResult>
     {
         private readonly String network;
+        private readonly AuthProvider authProvider;
 
-        public UnityRpcClient(String network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null)
+
+        public UnityRpcClient(AuthProvider authProvider, String network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null)
         {
             if (jsonSerializerSettings == null)
                 jsonSerializerSettings = DefaultJsonSerializerSettingsFactory.BuildDefaultJsonSerializerSettings();
@@ -39,7 +42,7 @@ namespace Bitski.Unity.Rpc
         {
             var requestFormatted = new RpcModel.RpcRequest(request.Id, request.Method, request.RawParameters);
 
-            var user = BitskiSDK.CurrentUser;
+            var user = authProvider.CurrentUser;
 
             var rpcRequestJson = JsonConvert.SerializeObject(requestFormatted, JsonSerializerSettings);
             Debug.Log(rpcRequestJson);
@@ -59,7 +62,6 @@ namespace Bitski.Unity.Rpc
             if (unityRequest.error != null)
             {
                 this.Exception = new Exception(unityRequest.error);
-                Debug.Log(unityRequest.error);
             }
             else
             {
@@ -67,7 +69,6 @@ namespace Bitski.Unity.Rpc
                 {
                     byte[] results = unityRequest.downloadHandler.data;
                     var responseJson = Encoding.UTF8.GetString(results);
-                    Debug.Log(responseJson);
                     var responseObject = JsonConvert.DeserializeObject<RpcResponse>(responseJson, JsonSerializerSettings);
                     this.Result = responseObject.GetResult<TResult>(true, JsonSerializerSettings);
                     this.Exception = HandleRpcError(responseObject);
@@ -75,7 +76,6 @@ namespace Bitski.Unity.Rpc
                 catch (Exception ex)
                 {
                     this.Exception = new Exception(ex.Message);
-                    Debug.Log(ex.Message);
                 }
             }
         }

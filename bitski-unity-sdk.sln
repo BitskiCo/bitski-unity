@@ -1,0 +1,31 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26124.0
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{B441D9DA-E2AF-4345-AFB2-8E80EF0682AC}") = "Bitski", "Bitski\Bitski.csproj", "{B0C7D075-50FF-4E65-8F4E-9CD317207E93}"
+EndProject
+Project("{F3DB551E-8369-4D1C-A314-7AAB91B32F97}") = "Bitski.Unity.WebGL", "Bitski.Unity.WebGL\Bitski.Unity.WebGL.csproj", "{5F98058C-3254-4011-B473-6EAE6D757B32}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0C7D075-50FF-4E65-8F4E-9CD317207E93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0C7D075-50FF-4E65-8F4E-9CD317207E93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0C7D075-50FF-4E65-8F4E-9CD317207E93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0C7D075-50FF-4E65-8F4E-9CD317207E93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F98058C-3254-4011-B473-6EAE6D757B32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F98058C-3254-4011-B473-6EAE6D757B32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F98058C-3254-4011-B473-6EAE6D757B32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F98058C-3254-4011-B473-6EAE6D757B32}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

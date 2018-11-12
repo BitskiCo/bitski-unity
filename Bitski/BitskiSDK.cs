@@ -1,30 +1,11 @@
-﻿namespace Bitski
+namespace Bitski
 {
     using System;
     using UnityEngine;
-    using Unity.WebGL;
-    using Unity.Editor;
-    using Nethereum.Web3;
-    using Bitski.Unity.Rpc;
+    using Bitski.Unity.WebGL;
+    using Bitski.Unity.Editor;
+    using Bitski.Auth;
     using System.Threading.Tasks;
-
-    /// <summary>
-    /// A Bitski user.
-    /// </summary>
-    public class User
-    {
-        public string AccessToken { get; set; }
-        public string UserId { get; set; }
-        public DateTime ExpiresAt { get; set; }
-
-        public bool IsExpired
-        {
-            get
-            {
-                return ExpiresAt > DateTime.Now;
-            }
-        }
-    }
 
     /// <summary>
     /// The Bitski SDK.
@@ -104,12 +85,5 @@
                 return AuthProviderImpl.CurrentUser;
             }
         }
-    }
-
-    public interface AuthProvider
-    {
-        void SignIn(Action<User> callback);
-        void GetUser(Action<User> callback);
-        User CurrentUser { get; }
     }
 }

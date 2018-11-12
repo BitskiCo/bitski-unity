@@ -3,8 +3,9 @@
     using System;
     using UnityEngine;
     using System.Threading.Tasks;
-
-    class EditorAuthProvider : MonoBehaviour, AuthProvider {
+    using Bitski.Auth;
+    
+    public class EditorAuthProvider : MonoBehaviour, AuthProvider {
         public User CurrentUser {
             get {
                 return new User
