@@ -5,7 +5,6 @@ namespace Bitski
     using Bitski.Unity.WebGL;
     using Bitski.Unity.Editor;
     using Bitski.Auth;
-    using System.Threading.Tasks;
 
     /// <summary>
     /// The Bitski SDK.

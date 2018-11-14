@@ -2,7 +2,6 @@ namespace Bitski.Unity.Editor
 {
     using System;
     using UnityEngine;
-    using System.Threading.Tasks;
     using Bitski.Auth;
     
     public class EditorAuthProvider : MonoBehaviour, AuthProvider {
