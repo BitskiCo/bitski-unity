@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Nethereum.ABI">
+        <HintPath>..\lib\Nethereum.ABI.dll</HintPath>
+    </Reference>
+    <Reference Include="Nethereum.Contracts">
+        <HintPath>..\lib\Nethereum.Contracts.dll</HintPath>
+    </Reference>
+      <Reference Include="Nethereum.RPC">
+        <HintPath>..\lib\Nethereum.RPC.dll</HintPath>
+    </Reference>
+    <Reference Include="Nethereum.JsonRpc.Client">
+        <HintPath>..\lib\Nethereum.JsonRpc.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Nethereum.Hex">
+        <HintPath>..\lib\Nethereum.Hex.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="UnityEngine">
+      <HintPath>..\lib\UnityEngine.dll</HintPath>
+    </Reference>
+
+    <Reference Include="Newtonsoft.Json">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Bitski.Auth\Bitski.Auth.csproj" />
+  </ItemGroup>
+</Project>

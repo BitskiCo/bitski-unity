@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="UnityEngine">
+      <HintPath>..\lib\UnityEngine.dll</HintPath>
+    </Reference>
+
+    <Reference Include="Newtonsoft.Json">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Bitski.Auth\Bitski.Auth.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ContentWithTargetPath Include="Plugins\WebGLAuthProvider.jslib">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>WebGLAuthProvider.jslib</TargetPath>
+    </ContentWithTargetPath>
+  </ItemGroup>
+
+</Project>

@@ -1,22 +1,34 @@
-﻿namespace Bitski.Unity.Editor
+namespace Bitski.Unity.Editor
 {
     using System;
     using UnityEngine;
+    using System.Threading.Tasks;
+    using Bitski.Auth;
+    
+    public class EditorAuthProvider : MonoBehaviour, AuthProvider {
+        public User CurrentUser {
+            get {
+                return new User
+                {
+                    UserId = "fake-user",
+                    AccessToken = "fake-token",
+                    ExpiresAt = DateTime.Now
+                };
+            }
+        }
 
-    class EditorAuthProvider : MonoBehaviour, AuthProvider {
         public EditorAuthProvider(String clientId) {
             
         }
 
         public void SignIn(Action<User> callback)
         {
-            throw new NotSupportedException("The Bitski sdk does not support signing in in the editor");
+            callback(CurrentUser);
         }
-
 
         public void GetUser(Action<User> callback)
         {
-            throw new NotSupportedException("The Bitski sdk does not support getting a user in the editor");
+            callback(CurrentUser);
         }
     }
 }
