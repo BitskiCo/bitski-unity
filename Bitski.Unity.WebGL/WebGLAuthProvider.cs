@@ -26,7 +26,7 @@ namespace Bitski.Unity.WebGL
         public string token_type;
     }
 
-    public class WebGLAuthProvider : MonoBehaviour, AuthProvider
+    public class WebGLAuthProvider : ScriptableObject, AuthProvider
     {
         [DllImport("__Internal")]
         private static extern void BitskiWebGLInit(string clientId);
@@ -37,33 +37,57 @@ namespace Bitski.Unity.WebGL
         [DllImport("__Internal")]
         private static extern void BitskiWebGLGetUser();
 
-        private static User _currentUser;
+        [DllImport("__Internal")]
+        private static extern void BitskiWebGLSendTransaction(string network, string method, string request);
 
         public User CurrentUser {
             get {
-                return _currentUser;
+                return WebGLAuthProviderCallbackHandler._lastKnownUser;
+            }
+        }
+
+        private static GameObject Bridge;
+
+        static void Setup() {
+            if (Bridge == null) {
+                var bridge = new GameObject("WebGLAuthProvider");
+                bridge.AddComponent<WebGLAuthProviderCallbackHandler>();
+
+                DontDestroyOnLoad(bridge);
+
+                Bridge = bridge;
             }
         }
 
         public WebGLAuthProvider(String clientId)
         {
             BitskiWebGLInit(clientId);
-
-            var bridge = new GameObject("WebGLAuthProvider");
-            bridge.AddComponent<WebGLAuthProvider>();
-
-            DontDestroyOnLoad(bridge);
-
-            //    bridge.transform.parent = gameObject.transform;
+            Setup();
         }
-
-        private static Action<User> SignInCallback;
 
         public void SignIn(Action<User> callback)
         {
-            SignInCallback = callback;
+            WebGLAuthProviderCallbackHandler.SignInCallback = callback;
             BitskiWebGLSignIn();
         }
+
+        public void GetUser(Action<User> callback)
+        {
+            WebGLAuthProviderCallbackHandler.GetUserCallback = callback;
+            BitskiWebGLGetUser();
+        }
+
+        public void SendTransaction(String network, String method, String request, Action<String> callback) 
+        {
+            WebGLAuthProviderCallbackHandler.SendTransactionCallback = callback;
+            BitskiWebGLSendTransaction(network, method, request);
+        }
+    }
+
+    public class WebGLAuthProviderCallbackHandler: MonoBehaviour {
+        internal static User _lastKnownUser;
+
+        internal static Action<User> SignInCallback;
 
         public void DidSignIn(String jsonObject)
         {
@@ -81,20 +105,14 @@ namespace Bitski.Unity.WebGL
                     UserId = userResponse.profile.sub,
                 };
 
-                _currentUser = user;
+                _lastKnownUser = user;
 
                 SignInCallback(user);
             }
         }
 
 
-        private static Action<User> GetUserCallback;
-
-        public void GetUser(Action<User> callback)
-        {
-            GetUserCallback = callback;
-            BitskiWebGLGetUser();
-        }
+        internal static Action<User> GetUserCallback;
 
         public void DidGetUser(String jsonObject)
         {
@@ -120,10 +138,16 @@ namespace Bitski.Unity.WebGL
                     UserId = userResponse.profile.sub,
                 };
 
-                _currentUser = user;
+                _lastKnownUser = user;
 
                 GetUserCallback(user);
             }
+        }
+
+        internal static Action<String> SendTransactionCallback;
+
+        public void DidSendTransaction(String jsonObject) {
+            SendTransactionCallback(jsonObject);
         }
     }
 }

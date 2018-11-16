@@ -29,5 +29,10 @@ namespace Bitski.Unity.Editor
         {
             callback(CurrentUser);
         }
+
+        public void SendTransaction(String network, String method, String request, Action<String> callback)
+        {
+            callback(null);
+        }
     }
 }

@@ -9,19 +9,20 @@ using UnityEngine.Networking;
 using RpcError = Nethereum.JsonRpc.Client.RpcError;
 using RpcRequest = Nethereum.JsonRpc.Client.RpcRequest;
 using Bitski.Auth;
+using Bitski;
 
 namespace Bitski.Unity.Rpc
 {
 
     public class UnityRpcClient<TResult> : UnityRequest<TResult>
     {
-        private readonly String network;
-        private readonly AuthProvider authProvider;
+        internal readonly String network;
+        internal readonly AuthProvider authProvider;
 
 
-        public UnityRpcClient(AuthProvider authProvider, String network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null)
+        public UnityRpcClient(String network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null)
         {
-            this.authProvider = authProvider;
+            this.authProvider = authProvider ?? BitskiSDK.AuthProviderImpl;
             if (jsonSerializerSettings == null)
                 jsonSerializerSettings = DefaultJsonSerializerSettingsFactory.BuildDefaultJsonSerializerSettings();
             this.network = network;
@@ -31,7 +32,7 @@ namespace Bitski.Unity.Rpc
 
         public JsonSerializerSettings JsonSerializerSettings { get; set; }
 
-        private RpcResponseException HandleRpcError(RpcResponse response)
+        internal RpcResponseException HandleRpcError(RpcResponse response)
         {
             if (response.HasError)
                 return new RpcResponseException(new RpcError(response.Error.Code, response.Error.Message,
@@ -69,8 +70,6 @@ namespace Bitski.Unity.Rpc
             unityRequest.uploadHandler = uploadHandler;
 
             unityRequest.downloadHandler = new DownloadHandlerBuffer();
-
-            Debug.Log("Sending");
 
             yield return unityRequest.SendWebRequest();
 
