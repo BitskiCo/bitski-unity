@@ -3,11 +3,14 @@
     using Newtonsoft.Json;
     using System.Collections;
     using Bitski.Auth;
+    using Bitski;
+    using Bitski.Unity.RpcModel;
+    using UnityEngine;
     public class Web3ClientVersionUnityRequest : UnityRpcClient<System.String>
     {
         private readonly Nethereum.RPC.Web3.Web3ClientVersion _web3ClientVersion;
 
-        public Web3ClientVersionUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public Web3ClientVersionUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _web3ClientVersion = new Nethereum.RPC.Web3.Web3ClientVersion(null);
         }
@@ -24,7 +27,7 @@
     {
         private readonly Nethereum.RPC.Web3.Web3Sha3 _web3Sha3;
 
-        public Web3Sha3UnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public Web3Sha3UnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _web3Sha3 = new Nethereum.RPC.Web3.Web3Sha3(null);
         }
@@ -41,7 +44,7 @@
     {
         private readonly Nethereum.RPC.Shh.ShhNewIdentity _shhNewIdentity;
 
-        public ShhNewIdentityUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public ShhNewIdentityUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _shhNewIdentity = new Nethereum.RPC.Shh.ShhNewIdentity(null);
         }
@@ -58,7 +61,7 @@
     {
         private readonly Nethereum.RPC.Shh.ShhVersion _shhVersion;
 
-        public ShhVersionUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public ShhVersionUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _shhVersion = new Nethereum.RPC.Shh.ShhVersion(null);
         }
@@ -75,7 +78,7 @@
     {
         private readonly Nethereum.RPC.Personal.PersonalListAccounts _personalListAccounts;
 
-        public PersonalListAccountsUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public PersonalListAccountsUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _personalListAccounts = new Nethereum.RPC.Personal.PersonalListAccounts(null);
         }
@@ -92,7 +95,7 @@
     {
         private readonly Nethereum.RPC.Personal.PersonalLockAccount _personalLockAccount;
 
-        public PersonalLockAccountUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public PersonalLockAccountUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _personalLockAccount = new Nethereum.RPC.Personal.PersonalLockAccount(null);
         }
@@ -109,7 +112,7 @@
     {
         private readonly Nethereum.RPC.Personal.PersonalNewAccount _personalNewAccount;
 
-        public PersonalNewAccountUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public PersonalNewAccountUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _personalNewAccount = new Nethereum.RPC.Personal.PersonalNewAccount(null);
         }
@@ -126,7 +129,7 @@
     {
         private readonly Nethereum.RPC.Personal.PersonalSignAndSendTransaction _personalSignAndSendTransaction;
 
-        public PersonalSignAndSendTransactionUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public PersonalSignAndSendTransactionUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _personalSignAndSendTransaction = new Nethereum.RPC.Personal.PersonalSignAndSendTransaction(null);
         }
@@ -143,7 +146,7 @@
     {
         private readonly Nethereum.RPC.Personal.PersonalUnlockAccount _personalUnlockAccount;
 
-        public PersonalUnlockAccountUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public PersonalUnlockAccountUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _personalUnlockAccount = new Nethereum.RPC.Personal.PersonalUnlockAccount(null);
         }
@@ -160,7 +163,7 @@
     {
         private readonly Nethereum.RPC.Net.NetListening _netListening;
 
-        public NetListeningUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public NetListeningUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _netListening = new Nethereum.RPC.Net.NetListening(null);
         }
@@ -177,7 +180,7 @@
     {
         private readonly Nethereum.RPC.Net.NetPeerCount _netPeerCount;
 
-        public NetPeerCountUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public NetPeerCountUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _netPeerCount = new Nethereum.RPC.Net.NetPeerCount(null);
         }
@@ -194,7 +197,7 @@
     {
         private readonly Nethereum.RPC.Net.NetVersion _netVersion;
 
-        public NetVersionUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public NetVersionUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _netVersion = new Nethereum.RPC.Net.NetVersion(null);
         }
@@ -211,7 +214,7 @@
     {
         private readonly Nethereum.RPC.Eth.EthAccounts _ethAccounts;
 
-        public EthAccountsUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthAccountsUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethAccounts = new Nethereum.RPC.Eth.EthAccounts(null);
         }
@@ -228,7 +231,7 @@
     {
         private readonly Nethereum.RPC.Eth.EthCoinBase _ethCoinBase;
 
-        public EthCoinBaseUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthCoinBaseUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethCoinBase = new Nethereum.RPC.Eth.EthCoinBase(null);
         }
@@ -245,7 +248,7 @@
     {
         private readonly Nethereum.RPC.Eth.EthGasPrice _ethGasPrice;
 
-        public EthGasPriceUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthGasPriceUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethGasPrice = new Nethereum.RPC.Eth.EthGasPrice(null);
         }
@@ -262,7 +265,7 @@
     {
         private readonly Nethereum.RPC.Eth.EthGetBalance _ethGetBalance;
 
-        public EthGetBalanceUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthGetBalanceUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethGetBalance = new Nethereum.RPC.Eth.EthGetBalance(null);
         }
@@ -279,7 +282,7 @@
     {
         private readonly Nethereum.RPC.Eth.EthGetCode _ethGetCode;
 
-        public EthGetCodeUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthGetCodeUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethGetCode = new Nethereum.RPC.Eth.EthGetCode(null);
         }
@@ -296,7 +299,7 @@
     {
         private readonly Nethereum.RPC.Eth.EthGetStorageAt _ethGetStorageAt;
 
-        public EthGetStorageAtUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthGetStorageAtUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethGetStorageAt = new Nethereum.RPC.Eth.EthGetStorageAt(null);
         }
@@ -313,7 +316,7 @@
     {
         private readonly Nethereum.RPC.Eth.EthProtocolVersion _ethProtocolVersion;
 
-        public EthProtocolVersionUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthProtocolVersionUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethProtocolVersion = new Nethereum.RPC.Eth.EthProtocolVersion(null);
         }
@@ -330,7 +333,7 @@
     {
         private readonly Nethereum.RPC.Eth.EthSign _ethSign;
 
-        public EthSignUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthSignUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethSign = new Nethereum.RPC.Eth.EthSign(null);
         }
@@ -347,7 +350,7 @@
     {
         private readonly Nethereum.RPC.Eth.EthSyncing _ethSyncing;
 
-        public EthSyncingUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthSyncingUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethSyncing = new Nethereum.RPC.Eth.EthSyncing(null);
         }
@@ -364,7 +367,7 @@
     {
         private readonly Nethereum.RPC.Eth.Uncles.EthGetUncleByBlockHashAndIndex _ethGetUncleByBlockHashAndIndex;
 
-        public EthGetUncleByBlockHashAndIndexUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthGetUncleByBlockHashAndIndexUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethGetUncleByBlockHashAndIndex = new Nethereum.RPC.Eth.Uncles.EthGetUncleByBlockHashAndIndex(null);
         }
@@ -381,7 +384,7 @@
     {
         private readonly Nethereum.RPC.Eth.Uncles.EthGetUncleByBlockNumberAndIndex _ethGetUncleByBlockNumberAndIndex;
 
-        public EthGetUncleByBlockNumberAndIndexUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthGetUncleByBlockNumberAndIndexUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethGetUncleByBlockNumberAndIndex = new Nethereum.RPC.Eth.Uncles.EthGetUncleByBlockNumberAndIndex(null);
         }
@@ -398,7 +401,7 @@
     {
         private readonly Nethereum.RPC.Eth.Uncles.EthGetUncleCountByBlockHash _ethGetUncleCountByBlockHash;
 
-        public EthGetUncleCountByBlockHashUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthGetUncleCountByBlockHashUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethGetUncleCountByBlockHash = new Nethereum.RPC.Eth.Uncles.EthGetUncleCountByBlockHash(null);
         }
@@ -415,7 +418,7 @@
     {
         private readonly Nethereum.RPC.Eth.Uncles.EthGetUncleCountByBlockNumber _ethGetUncleCountByBlockNumber;
 
-        public EthGetUncleCountByBlockNumberUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthGetUncleCountByBlockNumberUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethGetUncleCountByBlockNumber = new Nethereum.RPC.Eth.Uncles.EthGetUncleCountByBlockNumber(null);
         }
@@ -432,7 +435,7 @@
     {
         private readonly Nethereum.RPC.Eth.Transactions.EthCall _ethCall;
 
-        public EthCallUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthCallUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethCall = new Nethereum.RPC.Eth.Transactions.EthCall(null);
         }
@@ -449,7 +452,7 @@
     {
         private readonly Nethereum.RPC.Eth.Transactions.EthEstimateGas _ethEstimateGas;
 
-        public EthEstimateGasUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthEstimateGasUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethEstimateGas = new Nethereum.RPC.Eth.Transactions.EthEstimateGas(null);
         }
@@ -466,7 +469,7 @@
     {
         private readonly Nethereum.RPC.Eth.Transactions.EthGetTransactionByBlockHashAndIndex _ethGetTransactionByBlockHashAndIndex;
 
-        public EthGetTransactionByBlockHashAndIndexUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthGetTransactionByBlockHashAndIndexUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethGetTransactionByBlockHashAndIndex = new Nethereum.RPC.Eth.Transactions.EthGetTransactionByBlockHashAndIndex(null);
         }
@@ -483,7 +486,7 @@
     {
         private readonly Nethereum.RPC.Eth.Transactions.EthGetTransactionByBlockNumberAndIndex _ethGetTransactionByBlockNumberAndIndex;
 
-        public EthGetTransactionByBlockNumberAndIndexUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthGetTransactionByBlockNumberAndIndexUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethGetTransactionByBlockNumberAndIndex = new Nethereum.RPC.Eth.Transactions.EthGetTransactionByBlockNumberAndIndex(null);
         }
@@ -500,7 +503,7 @@
     {
         private readonly Nethereum.RPC.Eth.Transactions.EthGetTransactionByHash _ethGetTransactionByHash;
 
-        public EthGetTransactionByHashUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthGetTransactionByHashUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethGetTransactionByHash = new Nethereum.RPC.Eth.Transactions.EthGetTransactionByHash(null);
         }
@@ -517,7 +520,7 @@
     {
         private readonly Nethereum.RPC.Eth.Transactions.EthGetTransactionCount _ethGetTransactionCount;
 
-        public EthGetTransactionCountUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthGetTransactionCountUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethGetTransactionCount = new Nethereum.RPC.Eth.Transactions.EthGetTransactionCount(null);
         }
@@ -534,7 +537,7 @@
     {
         private readonly Nethereum.RPC.Eth.Transactions.EthGetTransactionReceipt _ethGetTransactionReceipt;
 
-        public EthGetTransactionReceiptUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthGetTransactionReceiptUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethGetTransactionReceipt = new Nethereum.RPC.Eth.Transactions.EthGetTransactionReceipt(null);
         }
@@ -551,7 +554,7 @@
     {
         private readonly Nethereum.RPC.Eth.Transactions.EthSendRawTransaction _ethSendRawTransaction;
 
-        public EthSendRawTransactionUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthSendRawTransactionUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethSendRawTransaction = new Nethereum.RPC.Eth.Transactions.EthSendRawTransaction(null);
         }
@@ -568,15 +571,43 @@
     {
         private readonly Nethereum.RPC.Eth.Transactions.EthSendTransaction _ethSendTransaction;
 
-        public EthSendTransactionUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthSendTransactionUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethSendTransaction = new Nethereum.RPC.Eth.Transactions.EthSendTransaction(null);
+        }
+
+        public void SendRequestCallback(string result)
+        {
+            Debug.Log(result);
+            var responseObject = JsonConvert.DeserializeObject<RpcResponse>(result, JsonSerializerSettings);
+            this.Result = responseObject.GetResult<System.String>(true, JsonSerializerSettings);
+            this.Exception = HandleRpcError(responseObject);       
         }
 
         public IEnumerator SendRequest(Nethereum.RPC.Eth.DTOs.TransactionInput input)
         {
             var request = _ethSendTransaction.BuildRequest(input);
-            yield return SendRequest(request);
+
+            if (this.network == "ganache") {
+                Debug.Log("Using ganache, just forwarding request on...");
+                yield return base.SendRequest(request);
+                yield break;
+            }
+
+            var requestFormatted = new RpcModel.RpcRequest(request.Id, request.Method, request.RawParameters);
+            var rpcRequestJson = JsonConvert.SerializeObject(requestFormatted, JsonSerializerSettings);
+            Debug.Log(rpcRequestJson);
+            this.authProvider.SendTransaction(this.network, request.Method, rpcRequestJson, SendRequestCallback);
+
+            var waitCount = 0;
+
+            while (this.Result == null && this.Exception == null) {
+                if (waitCount > 100) {
+                    break;
+                }
+                waitCount++;
+                yield return new WaitForSeconds((float)0.1);
+            }
         }
     }
 
@@ -585,7 +616,7 @@
     {
         private readonly Nethereum.RPC.Eth.Mining.EthGetWork _ethGetWork;
 
-        public EthGetWorkUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthGetWorkUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethGetWork = new Nethereum.RPC.Eth.Mining.EthGetWork(null);
         }
@@ -602,7 +633,7 @@
     {
         private readonly Nethereum.RPC.Eth.Mining.EthHashrate _ethHashrate;
 
-        public EthHashrateUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthHashrateUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethHashrate = new Nethereum.RPC.Eth.Mining.EthHashrate(null);
         }
@@ -619,7 +650,7 @@
     {
         private readonly Nethereum.RPC.Eth.Mining.EthMining _ethMining;
 
-        public EthMiningUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthMiningUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethMining = new Nethereum.RPC.Eth.Mining.EthMining(null);
         }
@@ -636,7 +667,7 @@
     {
         private readonly Nethereum.RPC.Eth.Mining.EthSubmitHashrate _ethSubmitHashrate;
 
-        public EthSubmitHashrateUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthSubmitHashrateUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethSubmitHashrate = new Nethereum.RPC.Eth.Mining.EthSubmitHashrate(null);
         }
@@ -653,7 +684,7 @@
     {
         private readonly Nethereum.RPC.Eth.Mining.EthSubmitWork _ethSubmitWork;
 
-        public EthSubmitWorkUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthSubmitWorkUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethSubmitWork = new Nethereum.RPC.Eth.Mining.EthSubmitWork(null);
         }
@@ -670,7 +701,7 @@
     {
         private readonly Nethereum.RPC.Eth.Filters.EthGetFilterChangesForEthNewFilter _ethGetFilterChangesForEthNewFilter;
 
-        public EthGetFilterChangesForEthNewFilterUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthGetFilterChangesForEthNewFilterUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethGetFilterChangesForEthNewFilter = new Nethereum.RPC.Eth.Filters.EthGetFilterChangesForEthNewFilter(null);
         }
@@ -687,7 +718,7 @@
     {
         private readonly Nethereum.RPC.Eth.Filters.EthGetFilterChangesForBlockOrTransaction _ethGetFilterChangesForBlockOrTransaction;
 
-        public EthGetFilterChangesForBlockOrTransactionUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthGetFilterChangesForBlockOrTransactionUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethGetFilterChangesForBlockOrTransaction = new Nethereum.RPC.Eth.Filters.EthGetFilterChangesForBlockOrTransaction(null);
         }
@@ -704,7 +735,7 @@
     {
         private readonly Nethereum.RPC.Eth.Filters.EthGetFilterLogsForBlockOrTransaction _ethGetFilterLogsForBlockOrTransaction;
 
-        public EthGetFilterLogsForBlockOrTransactionUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthGetFilterLogsForBlockOrTransactionUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethGetFilterLogsForBlockOrTransaction = new Nethereum.RPC.Eth.Filters.EthGetFilterLogsForBlockOrTransaction(null);
         }
@@ -721,7 +752,7 @@
     {
         private readonly Nethereum.RPC.Eth.Filters.EthGetFilterLogsForEthNewFilter _ethGetFilterLogsForEthNewFilter;
 
-        public EthGetFilterLogsForEthNewFilterUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthGetFilterLogsForEthNewFilterUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethGetFilterLogsForEthNewFilter = new Nethereum.RPC.Eth.Filters.EthGetFilterLogsForEthNewFilter(null);
         }
@@ -738,7 +769,7 @@
     {
         private readonly Nethereum.RPC.Eth.Filters.EthGetLogs _ethGetLogs;
 
-        public EthGetLogsUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthGetLogsUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethGetLogs = new Nethereum.RPC.Eth.Filters.EthGetLogs(null);
         }
@@ -755,7 +786,7 @@
     {
         private readonly Nethereum.RPC.Eth.Filters.EthNewBlockFilter _ethNewBlockFilter;
 
-        public EthNewBlockFilterUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthNewBlockFilterUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethNewBlockFilter = new Nethereum.RPC.Eth.Filters.EthNewBlockFilter(null);
         }
@@ -772,7 +803,7 @@
     {
         private readonly Nethereum.RPC.Eth.Filters.EthNewFilter _ethNewFilter;
 
-        public EthNewFilterUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthNewFilterUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethNewFilter = new Nethereum.RPC.Eth.Filters.EthNewFilter(null);
         }
@@ -789,7 +820,7 @@
     {
         private readonly Nethereum.RPC.Eth.Filters.EthNewPendingTransactionFilter _ethNewPendingTransactionFilter;
 
-        public EthNewPendingTransactionFilterUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthNewPendingTransactionFilterUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethNewPendingTransactionFilter = new Nethereum.RPC.Eth.Filters.EthNewPendingTransactionFilter(null);
         }
@@ -806,7 +837,7 @@
     {
         private readonly Nethereum.RPC.Eth.Filters.EthUninstallFilter _ethUninstallFilter;
 
-        public EthUninstallFilterUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthUninstallFilterUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethUninstallFilter = new Nethereum.RPC.Eth.Filters.EthUninstallFilter(null);
         }
@@ -823,7 +854,7 @@
     {
         private readonly Nethereum.RPC.Eth.Compilation.EthCompileLLL _ethCompileLLL;
 
-        public EthCompileLLLUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthCompileLLLUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethCompileLLL = new Nethereum.RPC.Eth.Compilation.EthCompileLLL(null);
         }
@@ -840,7 +871,7 @@
     {
         private readonly Nethereum.RPC.Eth.Compilation.EthCompileSerpent _ethCompileSerpent;
 
-        public EthCompileSerpentUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthCompileSerpentUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethCompileSerpent = new Nethereum.RPC.Eth.Compilation.EthCompileSerpent(null);
         }
@@ -857,7 +888,7 @@
     {
         private readonly Nethereum.RPC.Eth.Compilation.EthCompileSolidity _ethCompileSolidity;
 
-        public EthCompileSolidityUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthCompileSolidityUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethCompileSolidity = new Nethereum.RPC.Eth.Compilation.EthCompileSolidity(null);
         }
@@ -874,7 +905,7 @@
     {
         private readonly Nethereum.RPC.Eth.Compilation.EthGetCompilers _ethGetCompilers;
 
-        public EthGetCompilersUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthGetCompilersUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethGetCompilers = new Nethereum.RPC.Eth.Compilation.EthGetCompilers(null);
         }
@@ -891,7 +922,7 @@
     {
         private readonly Nethereum.RPC.Eth.Blocks.EthBlockNumber _ethBlockNumber;
 
-        public EthBlockNumberUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthBlockNumberUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethBlockNumber = new Nethereum.RPC.Eth.Blocks.EthBlockNumber(null);
         }
@@ -908,7 +939,7 @@
     {
         private readonly Nethereum.RPC.Eth.Blocks.EthGetBlockWithTransactionsByHash _ethGetBlockWithTransactionsByHash;
 
-        public EthGetBlockWithTransactionsByHashUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthGetBlockWithTransactionsByHashUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethGetBlockWithTransactionsByHash = new Nethereum.RPC.Eth.Blocks.EthGetBlockWithTransactionsByHash(null);
         }
@@ -925,7 +956,7 @@
     {
         private readonly Nethereum.RPC.Eth.Blocks.EthGetBlockWithTransactionsHashesByHash _ethGetBlockWithTransactionsHashesByHash;
 
-        public EthGetBlockWithTransactionsHashesByHashUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthGetBlockWithTransactionsHashesByHashUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethGetBlockWithTransactionsHashesByHash = new Nethereum.RPC.Eth.Blocks.EthGetBlockWithTransactionsHashesByHash(null);
         }
@@ -942,7 +973,7 @@
     {
         private readonly Nethereum.RPC.Eth.Blocks.EthGetBlockWithTransactionsByNumber _ethGetBlockWithTransactionsByNumber;
 
-        public EthGetBlockWithTransactionsByNumberUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthGetBlockWithTransactionsByNumberUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethGetBlockWithTransactionsByNumber = new Nethereum.RPC.Eth.Blocks.EthGetBlockWithTransactionsByNumber(null);
         }
@@ -959,7 +990,7 @@
     {
         private readonly Nethereum.RPC.Eth.Blocks.EthGetBlockTransactionCountByHash _ethGetBlockTransactionCountByHash;
 
-        public EthGetBlockTransactionCountByHashUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthGetBlockTransactionCountByHashUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethGetBlockTransactionCountByHash = new Nethereum.RPC.Eth.Blocks.EthGetBlockTransactionCountByHash(null);
         }
@@ -976,7 +1007,7 @@
     {
         private readonly Nethereum.RPC.Eth.Blocks.EthGetBlockTransactionCountByNumber _ethGetBlockTransactionCountByNumber;
 
-        public EthGetBlockTransactionCountByNumberUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthGetBlockTransactionCountByNumberUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethGetBlockTransactionCountByNumber = new Nethereum.RPC.Eth.Blocks.EthGetBlockTransactionCountByNumber(null);
         }
@@ -993,7 +1024,7 @@
     {
         private readonly Nethereum.RPC.Eth.Blocks.EthGetBlockWithTransactionsHashesByNumber _ethGetBlockWithTransactionsHashesByNumber;
 
-        public EthGetBlockWithTransactionsHashesByNumberUnityRequest(AuthProvider authProvider, string network = "mainnet", JsonSerializerSettings jsonSerializerSettings = null) : base(authProvider, network, jsonSerializerSettings)
+        public EthGetBlockWithTransactionsHashesByNumberUnityRequest(string network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null) : base(network, authProvider, jsonSerializerSettings)
         {
             _ethGetBlockWithTransactionsHashesByNumber = new Nethereum.RPC.Eth.Blocks.EthGetBlockWithTransactionsHashesByNumber(null);
         }
