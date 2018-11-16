@@ -59,8 +59,11 @@ namespace Bitski.Unity.WebGL
             }
         }
 
+        public String ClientId { get; private set; }
+
         public WebGLAuthProvider(String clientId)
         {
+            ClientId = clientId;
             BitskiWebGLInit(clientId);
             Setup();
         }

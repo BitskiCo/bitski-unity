@@ -59,6 +59,8 @@ namespace Bitski.Unity.Rpc
             Debug.Log(url);
             var unityRequest = new UnityWebRequest(url, "POST");
             var uploadHandler = new UploadHandlerRaw(requestBytes);
+            unityRequest.SetRequestHeader("X-Client-Id", authProvider.ClientId);
+            unityRequest.SetRequestHeader("X-API-Key", authProvider.ClientId);
             unityRequest.SetRequestHeader("Content-Type", "application/json");
             if (authProvider.CurrentUser != null && authProvider.CurrentUser.AccessToken != null) {
                 Debug.Log("Auth token: authProvider.CurrentUser.AccessToken");

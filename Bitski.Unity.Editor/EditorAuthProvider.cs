@@ -16,8 +16,10 @@ namespace Bitski.Unity.Editor
             }
         }
 
+        public String ClientId { get; private set; }
+
         public EditorAuthProvider(String clientId) {
-            
+            ClientId = clientId;
         }
 
         public void SignIn(Action<User> callback)

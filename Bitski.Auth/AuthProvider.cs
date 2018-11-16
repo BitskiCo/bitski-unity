@@ -9,5 +9,7 @@ namespace Bitski.Auth
         
         void SendTransaction(String network, String method, String request, Action<String> callback);
         User CurrentUser { get; }
+
+        String ClientId { get; }
     }
 }
