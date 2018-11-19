@@ -28,7 +28,6 @@ namespace Bitski
             }
         }
 
-
         /// <summary>
         /// Initialize the Bitski SDK
         /// </summary>
@@ -37,12 +36,14 @@ namespace Bitski
             switch (Application.platform)
             {
                 case RuntimePlatform.WebGLPlayer:
-                    authProvider = new WebGLAuthProvider(clientId);
+                    authProvider = WebGLAuthProvider.CreateInstance<WebGLAuthProvider>();
+                    authProvider.Initialize(clientId);
                     break;
                 case RuntimePlatform.OSXEditor:
                 case RuntimePlatform.WindowsEditor:
                 case RuntimePlatform.LinuxEditor:
-                    authProvider = new EditorAuthProvider(clientId);
+                    authProvider = EditorAuthProvider.CreateInstance<EditorAuthProvider>();
+                    authProvider.Initialize(clientId);                
                     break;
                 default:
                     throw new NotSupportedException("The Bitski sdk does not support this platform");

@@ -4,7 +4,7 @@ namespace Bitski.Unity.Editor
     using UnityEngine;
     using Bitski.Auth;
     
-    public class EditorAuthProvider : MonoBehaviour, AuthProvider {
+    public class EditorAuthProvider : ScriptableObject, AuthProvider {
         public User CurrentUser {
             get {
                 return new User
@@ -18,7 +18,8 @@ namespace Bitski.Unity.Editor
 
         public String ClientId { get; private set; }
 
-        public EditorAuthProvider(String clientId) {
+        public void Initialize(String clientId)
+        {
             ClientId = clientId;
         }
 
