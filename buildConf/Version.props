@@ -1,0 +1,19 @@
+<Project>
+  <PropertyGroup>
+    <VersionMajor>1</VersionMajor>
+    <VersionMinor>0</VersionMinor>
+    <VersionPatch>1</VersionPatch>
+    <NonDevAssemblyVersion>$(VersionMajor).0.0</NonDevAssemblyVersion>
+    <AssemblyVersion>$(NonDevAssemblyVersion)</AssemblyVersion>
+    <RelSuffix>$(ReleaseSuffix)</RelSuffix>
+    <RelSuffix Condition=" '$(ReleaseSuffix)' == '' "></RelSuffix>
+    
+    <FullNugetVersion>$(VersionMajor).$(VersionMinor).$(VersionPatch)-$(RelSuffix)</FullNugetVersion> 
+    
+    <NugetVersion Condition=" '$(RelSuffix)' != '' ">$(FullNugetVersion)</NugetVersion> 
+    <NugetVersion Condition=" '$(NugetVersion)' == '' ">$(VersionMajor).$(VersionMinor).$(VersionPatch)</NugetVersion> 
+
+    <BitskiVersion>$(NugetVersion)</BitskiVersion>
+    <UportVersion>0.0.17</UportVersion>
+  </PropertyGroup>
+</Project>

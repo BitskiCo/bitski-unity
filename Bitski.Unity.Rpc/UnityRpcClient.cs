@@ -19,7 +19,6 @@ namespace Bitski.Unity.Rpc
         internal readonly String network;
         internal readonly AuthProvider authProvider;
 
-
         public UnityRpcClient(String network = "mainnet", AuthProvider authProvider = null, JsonSerializerSettings jsonSerializerSettings = null)
         {
             this.authProvider = authProvider ?? BitskiSDK.AuthProviderImpl;

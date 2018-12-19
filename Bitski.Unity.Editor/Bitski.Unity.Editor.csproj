@@ -1,11 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), dir.props))\dir.props" />
+
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>$(UnityFrameworks)</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
     <Reference Include="UnityEngine">
-      <HintPath>..\lib\UnityEngine.dll</HintPath>
+      <HintPath>$(NethereumLibDir)\UnityEngine.dll</HintPath>
     </Reference>
   </ItemGroup>
 

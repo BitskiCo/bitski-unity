@@ -1,35 +1,40 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), dir.props))\dir.props" />
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>$(UnityFrameworks)</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
     <Reference Include="Nethereum.ABI">
-        <HintPath>..\lib\Nethereum.ABI.dll</HintPath>
+        <HintPath>$(NethereumLibDir)\Nethereum.ABI.dll</HintPath>
     </Reference>
     <Reference Include="Nethereum.Contracts">
-        <HintPath>..\lib\Nethereum.Contracts.dll</HintPath>
+        <HintPath>$(NethereumLibDir)\Nethereum.Contracts.dll</HintPath>
     </Reference>
       <Reference Include="Nethereum.RPC">
-        <HintPath>..\lib\Nethereum.RPC.dll</HintPath>
+        <HintPath>$(NethereumLibDir)\Nethereum.RPC.dll</HintPath>
     </Reference>
     <Reference Include="Nethereum.JsonRpc.Client">
-        <HintPath>..\lib\Nethereum.JsonRpc.Client.dll</HintPath>
+        <HintPath>$(NethereumLibDir)\Nethereum.JsonRpc.Client.dll</HintPath>
     </Reference>
     <Reference Include="Nethereum.Hex">
-        <HintPath>..\lib\Nethereum.Hex.dll</HintPath>
+        <HintPath>$(NethereumLibDir)\Nethereum.Hex.dll</HintPath>
     </Reference>
   </ItemGroup>
 
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net451' Or '$(TargetFramework)' == 'net461'">
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(NethereumLibDir)\Newtonsoft.Json.dll</HintPath>
+    </Reference>    
+  </ItemGroup>
+
+
   <ItemGroup>
     <Reference Include="UnityEngine">
-      <HintPath>..\lib\UnityEngine.dll</HintPath>
-    </Reference>
-
-    <Reference Include="Newtonsoft.Json">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\Newtonsoft.Json.dll</HintPath>
+      <HintPath>$(NethereumLibDir)\UnityEngine.dll</HintPath>
     </Reference>
   </ItemGroup>
 

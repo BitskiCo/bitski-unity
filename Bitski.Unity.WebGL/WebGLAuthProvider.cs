@@ -3,7 +3,6 @@ namespace Bitski.Unity.WebGL
     using System;
     using System.Runtime.InteropServices;
     using UnityEngine;
-    using Newtonsoft.Json;
     using Bitski.Auth;
 
     [Serializable]

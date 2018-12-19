@@ -1,10 +1,8 @@
 using Nethereum.RPC.Eth.DTOs;
-using Nethereum.RPC.Eth.Transactions;
 using Nethereum.Hex.HexTypes;
 using System.Collections;
 using System;
 using Nethereum.Contracts;
-using Nethereum.Contracts.CQS;
 using Nethereum.Contracts.Extensions;
 
 namespace Bitski.Unity.Rpc
@@ -68,7 +66,7 @@ namespace Bitski.Unity.Rpc
                 }
                 else
                 {
-                    transactionInput.Gas = new HexBigInteger(new System.Numerics.BigInteger(21000));
+                    transactionInput.Gas = new HexBigInteger("20000000000");
                 }
             }
 
@@ -79,8 +77,8 @@ namespace Bitski.Unity.Rpc
                 transactionInput.From = _account;
 
             yield return _ethSendTransactionRequest.SendRequest(transactionInput);
-                        
-            if(_ethSendTransactionRequest.Exception == null) 
+
+            if (_ethSendTransactionRequest.Exception == null)
             {
                 this.Result = _ethSendTransactionRequest.Result;
             }

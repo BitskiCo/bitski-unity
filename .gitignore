@@ -102,6 +102,7 @@ ads/Assets/AudienceNetwork/Plugins/iOS/libs/FBAudienceNetwork.framework/Headers/
 
 # Visual Studio
 ads/.vs/
+.vs/
 
 # Buck
 /buck-out
