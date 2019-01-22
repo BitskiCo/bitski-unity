@@ -1,7 +1,7 @@
 <Project>
   <PropertyGroup>
-    <TargetNet35>true</TargetNet35>
-    <TargetNet461>false</TargetNet461>
+    <TargetNet35>false</TargetNet35>
+    <TargetNet461>true</TargetNet461>
     <TargetNetCore>false</TargetNetCore>
     <TargetNetStandard>false</TargetNetStandard>
     <TargetUnityNet461AOT>false</TargetUnityNet461AOT>
